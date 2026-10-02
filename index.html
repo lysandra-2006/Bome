@@ -3036,7 +3036,7 @@ const googleInput = document.getElementById("googleKey");
 const startButton = document.getElementById("startBtn");
 
 function checkKeys() {
-  startButton.disabled = !(claudeInput.value.trim() && mosiInput.value.trim());
+  startButton.disabled = !(claudeInput.value.trim());
 }
 claudeInput.addEventListener("input", checkKeys);
 mosiInput.addEventListener("input", checkKeys);
@@ -3052,7 +3052,7 @@ async function startChat() {
   claudeApiKey = claudeInput.value.trim();
   mosiApiKey = mosiInput.value.trim();
   googleApiKey = googleInput.value.trim();
-  if (!claudeApiKey || !mosiApiKey) return;
+  if (!claudeApiKey) return;
 
   saveKeys();
   saveSettingsToMemory(); // Sync keys + settings to memory library
