@@ -9758,6 +9758,10 @@ function buildMusicHistoryContext() {
 // === Init ===
 AudioDB.init().catch(e => console.warn("AudioDB init failed:", e));
 loadKeys();
+// Auto-enter chat if a saved key exists — no manual setup screen needed
+if (claudeInput.value.trim()) {
+  startChat();
+}
 tryRestoreMemoryHandle();
 
 // Restore theme
